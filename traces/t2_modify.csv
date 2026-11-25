@@ -1,0 +1,19 @@
+# Tier 2: modify loses time priority; modify is passive (never matches)
+id,symbol,side,type,price,qty
+1,X,BUY,LIMIT,100,10
+2,X,BUY,LIMIT,100,20
+3,X,SELL,LIMIT,110,30
+# order 1 goes to the BACK of the 100 queue
+MODIFY,1,100,15
+# sell 25 must hit order 2 first (20) and then order 1 (5)
+4,X,SELL,LIMIT,100,25
+# reprice an ask
+MODIFY,3,105,30
+# passive: this ask now CROSSES the bid at 100 but must not trade
+MODIFY,3,95,30
+# the next order matches the crossed ask at its resting price
+5,X,BUY,LIMIT,96,10
+# unknown id
+MODIFY,999,100,5
+# bad price on a live order
+MODIFY,1,0,5

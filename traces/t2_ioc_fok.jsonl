@@ -1,0 +1,47 @@
+{"event":"ACK","order_id":1}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":50,"bids":[],"asks":[[100,50,1]]}
+{"event":"ACK","order_id":2}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":50,"bids":[],"asks":[[100,50,1],[101,50,1]]}
+{"event":"ACK","order_id":3}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":50,"bids":[],"asks":[[100,50,1],[101,50,1],[102,50,1]]}
+{"event":"ACK","order_id":4}
+{"event":"TRADE","aggressor_id":4,"resting_id":1,"price":100,"qty":50,"ts":4}
+{"event":"FILLED","order_id":1}
+{"event":"TRADE","aggressor_id":4,"resting_id":2,"price":101,"qty":30,"ts":4}
+{"event":"FILLED","order_id":4}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":101,"ask_qty":20,"bids":[],"asks":[[101,20,1],[102,50,1]]}
+{"event":"ACK","order_id":5}
+{"event":"TRADE","aggressor_id":5,"resting_id":2,"price":101,"qty":20,"ts":5}
+{"event":"FILLED","order_id":2}
+{"event":"PARTIAL","order_id":5,"remaining":80}
+{"event":"CANCEL_ACK","order_id":5}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":102,"ask_qty":50,"bids":[],"asks":[[102,50,1]]}
+{"event":"REJECT","order_id":6,"reason":"FOK not fillable"}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":102,"ask_qty":50,"bids":[],"asks":[[102,50,1]]}
+{"event":"ACK","order_id":7}
+{"event":"TRADE","aggressor_id":7,"resting_id":3,"price":102,"qty":50,"ts":7}
+{"event":"FILLED","order_id":3}
+{"event":"FILLED","order_id":7}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":null,"ask_qty":0,"bids":[],"asks":[]}
+{"event":"REJECT","order_id":9,"reason":"invalid price"}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":null,"ask_qty":0,"bids":[],"asks":[]}
+{"event":"ACK","order_id":10}
+{"event":"CANCEL_ACK","order_id":10}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":null,"ask_qty":0,"bids":[],"asks":[]}
+{"event":"ACK","order_id":11}
+{"state":"X","best_bid":100,"bid_qty":30,"best_ask":null,"ask_qty":0,"bids":[[100,30,1]],"asks":[]}
+{"event":"ACK","order_id":12}
+{"state":"X","best_bid":100,"bid_qty":30,"best_ask":null,"ask_qty":0,"bids":[[100,30,1],[99,30,1]],"asks":[]}
+{"event":"ACK","order_id":13}
+{"event":"TRADE","aggressor_id":13,"resting_id":11,"price":100,"qty":30,"ts":12}
+{"event":"FILLED","order_id":11}
+{"event":"TRADE","aggressor_id":13,"resting_id":12,"price":99,"qty":30,"ts":12}
+{"event":"FILLED","order_id":12}
+{"event":"FILLED","order_id":13}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":null,"ask_qty":0,"bids":[],"asks":[]}
+{"event":"ACK","order_id":14}
+{"state":"X","best_bid":100,"bid_qty":30,"best_ask":null,"ask_qty":0,"bids":[[100,30,1]],"asks":[]}
+{"event":"ACK","order_id":15}
+{"state":"X","best_bid":100,"bid_qty":30,"best_ask":null,"ask_qty":0,"bids":[[100,30,1],[98,30,1]],"asks":[]}
+{"event":"REJECT","order_id":16,"reason":"FOK not fillable"}
+{"state":"X","best_bid":100,"bid_qty":30,"best_ask":null,"ask_qty":0,"bids":[[100,30,1],[98,30,1]],"asks":[]}

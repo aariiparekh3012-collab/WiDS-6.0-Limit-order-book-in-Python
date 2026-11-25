@@ -1,0 +1,25 @@
+# Tier 2: IOC and FOK
+id,symbol,side,type,price,qty
+1,X,SELL,LIMIT,100,50
+2,X,SELL,LIMIT,101,50
+3,X,SELL,LIMIT,102,50
+# IOC fully filled across two levels
+4,X,BUY,IOC,101,80
+# IOC partially filled: remainder is killed, never rests
+5,X,BUY,IOC,101,100
+# FOK that cannot be filled in full: rejected, book untouched
+6,X,BUY,FOK,102,100
+# FOK that can be filled exactly
+7,X,BUY,FOK,102,50
+# FOK needs a positive price
+9,X,BUY,FOK,0,10
+# IOC into an empty opposite side: nothing happens except ack + cancel
+10,X,SELL,IOC,100,10
+# FOK sell against a bid stack, exactly enough
+11,X,BUY,LIMIT,100,30
+12,X,BUY,LIMIT,99,30
+13,X,SELL,FOK,99,60
+# FOK sell with a limit that stops short of the second level
+14,X,BUY,LIMIT,100,30
+15,X,BUY,LIMIT,98,30
+16,X,SELL,FOK,99,50

@@ -1,0 +1,18 @@
+# Tier 3: self-trade prevention. 7th column = trader id (0 = anonymous, STP never fires).
+# This ONE csv is run under all three modes; the golden outputs differ.
+id,symbol,side,type,price,qty,trader_id
+1,X,BUY,LIMIT,100,50,1
+2,X,BUY,LIMIT,100,50,2
+# trader 1 sells into its own resting bid at the front of the queue
+3,X,SELL,LIMIT,100,70,1
+4,X,SELL,LIMIT,101,40,2
+# trader 2 buys into its own resting ask
+5,X,BUY,LIMIT,101,60,2
+# trader 0 never triggers STP
+6,X,BUY,MARKET,0,10,0
+7,X,SELL,LIMIT,100,20,0
+8,X,BUY,LIMIT,100,30,3
+9,X,BUY,LIMIT,100,30,4
+# FOK under STP: same-trader liquidity does not count as fillable
+10,X,SELL,FOK,100,60,3
+11,X,SELL,FOK,100,60,5

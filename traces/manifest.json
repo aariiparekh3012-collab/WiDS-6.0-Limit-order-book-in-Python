@@ -1,0 +1,114 @@
+[
+  {
+    "name": "t1_basic",
+    "csv": "t1_basic.csv",
+    "golden": "t1_basic.jsonl",
+    "stp": "NONE",
+    "tier": 1,
+    "description": "limit/market, FIFO, sweep, cancel, rejects, 2 symbols"
+  },
+  {
+    "name": "t1_fuzz_s1",
+    "csv": "t1_fuzz_s1.csv",
+    "golden": "t1_fuzz_s1.jsonl",
+    "stp": "NONE",
+    "tier": 1,
+    "description": "400 random limit/market/cancel"
+  },
+  {
+    "name": "t1_fuzz_s2",
+    "csv": "t1_fuzz_s2.csv",
+    "golden": "t1_fuzz_s2.jsonl",
+    "stp": "NONE",
+    "tier": 1,
+    "description": "2 symbols"
+  },
+  {
+    "name": "t2_fuzz_s3",
+    "csv": "t2_fuzz_s3.csv",
+    "golden": "t2_fuzz_s3.jsonl",
+    "stp": "NONE",
+    "tier": 2,
+    "description": "all types + modify"
+  },
+  {
+    "name": "t2_fuzz_s4",
+    "csv": "t2_fuzz_s4.csv",
+    "golden": "t2_fuzz_s4.jsonl",
+    "stp": "NONE",
+    "tier": 2,
+    "description": "all types + modify, 2 symbols"
+  },
+  {
+    "name": "t2_ioc_fok",
+    "csv": "t2_ioc_fok.csv",
+    "golden": "t2_ioc_fok.jsonl",
+    "stp": "NONE",
+    "tier": 2,
+    "description": "IOC partials, FOK all-or-nothing"
+  },
+  {
+    "name": "t2_modify",
+    "csv": "t2_modify.csv",
+    "golden": "t2_modify.jsonl",
+    "stp": "NONE",
+    "tier": 2,
+    "description": "modify loses priority, passive reprice"
+  },
+  {
+    "name": "t3_fuzz_both_s7",
+    "csv": "t3_fuzz_both_s7.csv",
+    "golden": "t3_fuzz_both_s7.jsonl",
+    "stp": "CANCEL_BOTH",
+    "tier": 3,
+    "description": "STP both, random flow"
+  },
+  {
+    "name": "t3_fuzz_newest_s5",
+    "csv": "t3_fuzz_newest_s5.csv",
+    "golden": "t3_fuzz_newest_s5.jsonl",
+    "stp": "CANCEL_NEWEST",
+    "tier": 3,
+    "description": "STP newest, random flow"
+  },
+  {
+    "name": "t3_fuzz_oldest_s6",
+    "csv": "t3_fuzz_oldest_s6.csv",
+    "golden": "t3_fuzz_oldest_s6.jsonl",
+    "stp": "CANCEL_OLDEST",
+    "tier": 3,
+    "description": "STP oldest, random flow"
+  },
+  {
+    "name": "t3_stp_both",
+    "csv": "t3_stp.csv",
+    "golden": "t3_stp_both.jsonl",
+    "stp": "CANCEL_BOTH",
+    "tier": 3,
+    "description": "self-trade: cancel both"
+  },
+  {
+    "name": "t3_stp_newest",
+    "csv": "t3_stp.csv",
+    "golden": "t3_stp_newest.jsonl",
+    "stp": "CANCEL_NEWEST",
+    "tier": 3,
+    "description": "self-trade: cancel newest"
+  },
+  {
+    "name": "t3_stp_oldest",
+    "csv": "t3_stp.csv",
+    "golden": "t3_stp_oldest.jsonl",
+    "stp": "CANCEL_OLDEST",
+    "tier": 3,
+    "description": "self-trade: cancel oldest"
+  },
+  {
+    "name": "t4_quirk_modify_invalid",
+    "csv": "t4_quirk_modify_invalid.csv",
+    "golden": "t4_quirk_modify_invalid.jsonl",
+    "stp": "NONE",
+    "tier": 4,
+    "description": "C++ swallows modify's own reject (see MENTOR_NOTES)"
+  }
+]

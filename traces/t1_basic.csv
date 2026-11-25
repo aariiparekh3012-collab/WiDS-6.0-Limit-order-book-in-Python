@@ -1,0 +1,33 @@
+# Tier 1: book building, crossing, FIFO within a price, market sweep, cancel, rejects, 2 symbols
+id,symbol,side,type,price,qty
+# build a book
+1,AAPL,BUY,LIMIT,15000,100
+2,AAPL,BUY,LIMIT,14900,200
+3,AAPL,SELL,LIMIT,15100,150
+4,AAPL,SELL,LIMIT,15200,100
+# crossing sell hits bid 1 (partial fill of the resting order)
+5,AAPL,SELL,LIMIT,15000,50
+# market buy eats into ask 3
+6,AAPL,BUY,MARKET,0,100
+# same price as order 1: must queue BEHIND it (FIFO)
+7,AAPL,BUY,LIMIT,15000,25
+# big sell: fills order 1 then order 7, remainder rests as an ask
+8,AAPL,SELL,LIMIT,15000,200
+# big buy sweeps three ask levels, remainder rests as a bid
+9,AAPL,BUY,LIMIT,15300,500
+# cancels: live, already-cancelled, never existed
+CANCEL,2
+CANCEL,2
+CANCEL,999
+# rejects: bad price, bad qty, duplicate id
+10,AAPL,BUY,LIMIT,0,100
+11,AAPL,BUY,LIMIT,14000,0
+9,AAPL,SELL,LIMIT,16000,10
+# market sell bigger than the book: partial then cancel of the rest
+13,AAPL,SELL,MARKET,0,1000
+# a second symbol is an independent book
+20,MSFT,BUY,LIMIT,30000,10
+21,MSFT,SELL,LIMIT,30000,4
+22,MSFT,SELL,LIMIT,30100,7
+CANCEL,22
+CANCEL,20

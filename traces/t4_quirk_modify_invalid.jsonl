@@ -1,0 +1,8 @@
+{"event":"ACK","order_id":1}
+{"state":"X","best_bid":100,"bid_qty":10,"best_ask":null,"ask_qty":0,"bids":[[100,10,1]],"asks":[]}
+{"event":"REJECT","order_id":1,"reason":"order not found"}
+{"state":"X","best_bid":100,"bid_qty":10,"best_ask":null,"ask_qty":0,"bids":[[100,10,1]],"asks":[]}
+{"event":"REJECT","order_id":1,"reason":"order not found"}
+{"state":"X","best_bid":100,"bid_qty":10,"best_ask":null,"ask_qty":0,"bids":[[100,10,1]],"asks":[]}
+{"event":"CANCEL_ACK","order_id":1}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":null,"ask_qty":0,"bids":[],"asks":[]}
