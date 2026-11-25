@@ -2,11 +2,11 @@
 """Throughput benchmark: how many orders per second does YOUR book process?
 
     python bench.py                       # 100k commands against lob.book
-    python bench.py --n 200000 --impl mentor_only.book_solution
+    python bench.py --n 200000 --impl some.module
 
 Parsing is done before the clock starts, so this times only the engine. Compare the
-number with the C++ benchmark numbers your mentor gives you, then read the "faster
-design" section at the end of docs/DESIGN_cpp.md and try it.
+number with the reference benchmark numbers your mentor gives you, then read the "faster
+design" section at the end of docs/DESIGN.md and try it.
 """
 import argparse
 import os

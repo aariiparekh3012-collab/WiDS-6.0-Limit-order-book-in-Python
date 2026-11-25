@@ -1,7 +1,7 @@
 """Small unit tests to run while you work:  python -m unittest -v tests.test_book
 
 They check behaviour you can reason about by hand. The grader is still the
-real judge. Use  IMPL=mentor_only.book_solution python -m unittest ...  to run another Book.
+real judge. Use  IMPL=some.module python -m unittest ...  to run another Book.
 """
 import importlib
 import os

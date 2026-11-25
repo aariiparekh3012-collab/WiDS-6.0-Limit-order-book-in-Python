@@ -5,7 +5,7 @@ incoming orders by price-time priority, and reports everything that happens by
 calling sink.on_event(<event>) with the dataclasses from lob/events.py.
 
 The tiers below match the grader (python grade.py --tier N). Do them in order.
-Read docs/DESIGN_cpp.md first: the data-structure discussion there is the
+Read docs/DESIGN.md first: the data-structure discussion there is the
 best hint you will get. The rules you must reproduce are in README.md (section "The rules").
 """
 from __future__ import annotations

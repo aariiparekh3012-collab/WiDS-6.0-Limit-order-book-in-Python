@@ -1,4 +1,4 @@
-"""Events the book emits. Field names and order match the C++ JSON sink exactly."""
+"""Events the book emits. Field names and order match the reference JSON sink exactly."""
 from __future__ import annotations
 
 from dataclasses import dataclass, fields

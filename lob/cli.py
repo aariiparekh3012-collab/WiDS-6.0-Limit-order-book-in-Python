@@ -1,6 +1,6 @@
 """CSV runner. PROVIDED. Feeds a CSV of commands through your Book.
 
-CSV format (same as the C++ lob_cli):
+CSV format (the reference lob_cli format):
     id,symbol,side,type,price,qty[,trader_id]
     CANCEL,<order_id>
     MODIFY,<order_id>,<new_price>,<new_qty>
@@ -9,7 +9,7 @@ Lines starting with # and blank lines are ignored. Timestamps are assigned
 
 Output is JSON lines: every event, then after each command one "state" line
 per symbol (top of book + 5 levels of depth). The grader compares these lines
-against the C++ engine's output.
+against the reference engine output.
 
 Usage:  python -m lob.cli [--stp newest|oldest|both] orders.csv
 """
@@ -116,7 +116,7 @@ def run_csv(text: str, stp: STPMode = STPMode.NONE, book_factory=None
 
 
 def load_factory(impl: str):
-    """'lob.book' (default) or e.g. 'mentor_only.book_solution' -> that module's Book."""
+    """'lob.book' (default) or e.g. 'mypkg.mybook' -> that module's Book."""
     return importlib.import_module(impl).Book
 
 

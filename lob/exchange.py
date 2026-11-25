@@ -1,6 +1,6 @@
 """Routes orders to one Book per symbol. PROVIDED, you do not need to edit this.
 
-It mirrors the C++ Exchange on purpose, including how cancel/modify find the
+It mirrors the reference Exchange on purpose, including how cancel/modify find the
 right book: they probe each book in turn and forward the first success.
 """
 from __future__ import annotations

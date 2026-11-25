@@ -2,6 +2,9 @@ name: grade
 on: [push, pull_request]
 jobs:
   grade:
+    # The template repo ships a stub Book, so it would always fail.
+    # This runs on mentees' own copies (forks / "use this template" repos).
+    if: github.repository != 'aariiparekh3012-collab/WiDS-6.0-Limit-order-book-in-Python'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

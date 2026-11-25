@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Grader: runs your Book against golden traces produced by the C++ engine.
+"""Grader: runs your Book against golden traces produced by the reference engine.
 
     python grade.py                 # all tiers
     python grade.py --tier 1        # only tier 1 traces
     python grade.py --only t1_basic # one trace by name
     python grade.py -v              # show more context on failures
-    python grade.py --impl mentor_only.book_solution   # (mentor) check the reference solution
+    python grade.py --impl some.module   # grade a Book from another module
 
 A trace passes only if EVERY output line matches: each event, and the book state
 (top of book + 5 depth levels) after every command.

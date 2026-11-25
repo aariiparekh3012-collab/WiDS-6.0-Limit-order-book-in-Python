@@ -1,7 +1,7 @@
 # Limit Order Book in Python (WiDS 6.0, IIT Bombay Analytics Club)
 
 You will write the matching engine of a small exchange in Python, check it
-against golden traces produced by a reference C++17 engine, then make it fast
+against golden traces produced by a reference engine, then make it fast
 and use its order flow to look for a signal.
 
 | Week | Theme | You do | Grader |
@@ -16,8 +16,8 @@ Time budget is 6 to 8 hours a week. Python 3.10 or newer, standard library only.
 ## Setup
 
 ```bash
-git clone <this repo>
-cd wids-lob-python
+git clone https://github.com/aariiparekh3012-collab/WiDS-6.0-Limit-order-book-in-Python.git
+cd WiDS-6.0-Limit-order-book-in-Python
 python grade.py            # everything fails with "not implemented yet": that is correct
 ```
 
@@ -33,10 +33,10 @@ lob/types.py       Order, Side, OrderType, STPMode, TopOfBook, MarketDepth
 lob/events.py      the events your book emits (ACK, TRADE, ...)
 lob/exchange.py    one Book per symbol (provided)
 lob/cli.py         CSV runner: python -m lob.cli orders.csv
-grade.py           compares your output with the C++ engine's, line by line
+grade.py           compares your output with the reference engine's, line by line
 bench.py           throughput benchmark
-traces/            input CSVs and golden outputs (.jsonl) from the C++ engine
-docs/              the C++ headers and DESIGN_cpp.md (read this first)
+traces/            input CSVs and golden outputs (.jsonl) from the reference engine
+docs/              DESIGN.md: data-structure notes (read this first)
 tests/             small unit tests you can run while you work
 ```
 
@@ -72,7 +72,7 @@ the resting order's `trader_id`. See the docstring at the bottom of `lob/book.py
 
 ## Workflow
 
-1. Read `docs/DESIGN_cpp.md` and the docstrings in `lob/book.py`.
+1. Read `docs/DESIGN.md` and the docstrings in `lob/book.py`.
 2. Implement a tier, run `python grade.py --tier N`, read the first difference.
 3. `python grade.py -v` shows more context around a failure.
 4. Commit when a tier goes green.
@@ -89,7 +89,7 @@ python bench.py --n 200000
 ```
 
 Always profile before optimising (`python -m cProfile -s cumtime bench.py`).
-Your mentor will give you the C++ numbers to compare against.
+Your mentor will give you the reference numbers to compare against.
 
 ## Rules of the road
 

@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 mentor_only/
 MENTOR_NOTES.md
+.vscode/
