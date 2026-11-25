@@ -4,9 +4,7 @@
     python bench.py                       # 100k commands against lob.book
     python bench.py --n 200000 --impl some.module
 
-Parsing is done before the clock starts, so this times only the engine. Compare the
-number with the reference benchmark numbers your mentor gives you, then read the "faster
-design" section at the end of docs/DESIGN.md and try it.
+Parsing is done before the clock starts, so this times only the engine. Repeat measurements on the same machine and workload; see docs/DESIGN.md and assignments/week3.md.
 """
 import argparse
 import os

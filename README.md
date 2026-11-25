@@ -13,6 +13,19 @@ and use its order flow to look for a signal. See [curriculum](docs/CURRICULUM.md
 
 Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. A 10-minute screening quiz assesses basic Python and reasoning; no finance or ML prerequisites. Python 3.10+ standard library for the engine; NumPy, pandas, Matplotlib and scikit-learn for Week 4.
 
+## Learning resources
+
+[Complete Notion project hub](https://app.notion.com/p/4233d7dedf7481cfbd3cf9bd47feef69)
+
+| Week | Learning guide | Assignment |
+|---|---|---|
+| 1 | [Core Limit Order Book](https://app.notion.com/p/4233d7dedf748165b366c72ce4dd52e8) | [Foundation](assignments/week1.md) |
+| 2 | [Advanced Order Types](https://app.notion.com/p/4233d7dedf748115b488e54b3f786c37) | [Advanced engine](assignments/week2.md) |
+| 3 | [Performance Benchmarking](https://app.notion.com/p/4233d7dedf7481e7b400f589fb05559b) | [Benchmarking](assignments/week3.md) |
+| 4 | [Quantitative Research and ML](https://app.notion.com/p/4233d7dedf7481c19fdad5625b0c82b4) | [Research](assignments/week4.md) |
+
+[Additional reading and documentation](docs/RESOURCES.md)
+
 ## Setup
 
 ```bash
