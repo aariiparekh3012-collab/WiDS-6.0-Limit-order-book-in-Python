@@ -8,8 +8,8 @@ and use its order flow to look for a signal.
 |---|---|---|---|
 | 1 | Core book | limit and market orders, FIFO, cancel, top of book, depth | `python grade.py --tier 1` |
 | 2 | Order types | IOC, FOK, modify | `python grade.py --tier 2` |
-| 3 | Speed | self-trade prevention, profile, benchmark, faster design | `python grade.py --tier 3`, `python bench.py` |
-| 4 | Analysis | simulator, tape and a signal challenge | set by your mentor |
+| 3 | Speed | benchmark, profile, one optimisation, written report. Self-trade prevention is an optional extension (up to 5 bonus marks) | `python bench.py`, optional `python grade.py --tier 3` |
+| 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook, report and demo | set by your mentor |
 
 Time budget is 6 to 8 hours a week. Python 3.10 or newer, standard library only.
 
@@ -38,6 +38,8 @@ bench.py           throughput benchmark
 traces/            input CSVs and golden outputs (.jsonl) from the reference engine
 docs/              DESIGN.md: data-structure notes (read this first)
 tests/             small unit tests you can run while you work
+assignments/       what to hand in each week
+templates/         design notes, benchmark CSV and report formats
 ```
 
 ## The rules
@@ -67,7 +69,7 @@ first, and within a price, the order that arrived first.
 it crosses, goes to the **back** of its queue. Check order: not found, then
 `new_qty <= 0`, then `new_price <= 0`. Success emits only `ModifyAck`.
 
-Self-trade prevention (Week 3) fires only when `order.trader_id != 0` and equals
+Self-trade prevention (optional extension) fires only when `order.trader_id != 0` and equals
 the resting order's `trader_id`. See the docstring at the bottom of `lob/book.py`.
 
 ## Workflow
@@ -95,4 +97,5 @@ Your mentor will give you the reference numbers to compare against.
 
 - Ask in your batch channel or a doubt slot before you are stuck for more than 45 minutes.
 - Write your own code. Discuss ideas freely, do not copy another mentee's `book.py`.
-- Tier 4 (`t4_quirk_modify_invalid`) is optional and already passes if tiers 1 to 3 are right.
+- Tiers 1 and 2 are mandatory (7 traces). Tier 3 (self-trade prevention) and Tier 4 (`t4_quirk_modify_invalid`) are optional.
+- Weekly tasks and what to hand in are in `assignments/`. Submission formats are in `templates/`.
