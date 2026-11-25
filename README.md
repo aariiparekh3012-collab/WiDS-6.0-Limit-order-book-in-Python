@@ -1,17 +1,17 @@
 # Limit Order Book in Python (WiDS 6.0, IIT Bombay Analytics Club)
 
 You will write the matching engine of a small exchange in Python, check it
-against golden traces produced by a reference engine, then make it fast
-and use its order flow to look for a signal.
+against golden traces under the independent educational specification, then benchmark it
+and use its order flow to look for a signal. See [curriculum](docs/CURRICULUM.md), [specification](docs/SPECIFICATION.md) and [rubric](docs/RUBRIC.md).
 
 | Week | Theme | You do | Grader |
 |---|---|---|---|
 | 1 | Core book | limit and market orders, FIFO, cancel, top of book, depth | `python grade.py --tier 1` |
 | 2 | Order types | IOC, FOK, modify | `python grade.py --tier 2` |
-| 3 | Speed | benchmark, profile, one optimisation, written report. Self-trade prevention is an optional extension (up to 5 bonus marks) | `python bench.py`, optional `python grade.py --tier 3` |
+| 3 | Speed | choose Basic measurement or Intermediate profiling and one optimisation; optional Cancel Newest challenge | `python bench.py`, optional `python grade.py --tier 3` |
 | 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook, report and demo | set by your mentor |
 
-Time budget is 6 to 8 hours a week. Python 3.10 or newer, standard library only.
+Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. Basic Python required; no finance or ML prerequisites. Python 3.10+ standard library for the engine; NumPy, pandas, Matplotlib and scikit-learn for Week 4.
 
 ## Setup
 
@@ -21,7 +21,7 @@ cd WiDS-6.0-Limit-order-book-in-Python
 python grade.py            # everything fails with "not implemented yet": that is correct
 ```
 
-Your work happens in **one file**: `lob/book.py`. Everything else is provided.
+Engine implementation belongs in **`lob/book.py`**; add your own tests, design notes, reports and research notebook.
 Do not edit `lob/events.py`, `lob/types.py`, `lob/exchange.py`, `lob/cli.py`,
 `grade.py` or the files in `traces/`.
 
@@ -33,9 +33,9 @@ lob/types.py       Order, Side, OrderType, STPMode, TopOfBook, MarketDepth
 lob/events.py      the events your book emits (ACK, TRADE, ...)
 lob/exchange.py    one Book per symbol (provided)
 lob/cli.py         CSV runner: python -m lob.cli orders.csv
-grade.py           compares your output with the reference engine's, line by line
+grade.py           compares your output with educational golden traces, line by line
 bench.py           throughput benchmark
-traces/            input CSVs and golden outputs (.jsonl) from the reference engine
+traces/            input CSVs and golden outputs (.jsonl) for the educational specification
 docs/              DESIGN.md: data-structure notes (read this first)
 tests/             small unit tests you can run while you work
 assignments/       what to hand in each week
@@ -69,8 +69,7 @@ first, and within a price, the order that arrived first.
 it crosses, goes to the **back** of its queue. Check order: not found, then
 `new_qty <= 0`, then `new_price <= 0`. Success emits only `ModifyAck`.
 
-Self-trade prevention (optional extension) fires only when `order.trader_id != 0` and equals
-the resting order's `trader_id`. See the docstring at the bottom of `lob/book.py`.
+Only Cancel Newest is an optional STP challenge. See docs/SPECIFICATION.md for exact behaviour, including atomic FOK.
 
 ## Workflow
 
@@ -90,12 +89,12 @@ python bench.py                  # 100k commands
 python bench.py --n 200000
 ```
 
-Always profile before optimising (`python -m cProfile -s cumtime bench.py`).
-Your mentor will give you the reference numbers to compare against.
+Basic: repeat measurements and explain results. Intermediate: also profile, analyse complexity and try one optimisation. No minimum speed target.
 
 ## Rules of the road
 
 - Ask in your batch channel or a doubt slot before you are stuck for more than 45 minutes.
 - Write your own code. Discuss ideas freely, do not copy another mentee's `book.py`.
-- Tiers 1 and 2 are mandatory (7 traces). Tier 3 (self-trade prevention) and Tier 4 (`t4_quirk_modify_invalid`) are optional.
+- Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest bonus; archived modes and compatibility fixtures are not graded.
+- Competitive leaderboard uses the 100-mark rubric, not raw speed or model accuracy.
 - Weekly tasks and what to hand in are in `assignments/`. Submission formats are in `templates/`.

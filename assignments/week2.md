@@ -1,5 +1,7 @@
 # Week 2: Advanced order types
 
+**Level 2 (Advanced), 20 marks.** Individual submission.
+
 **Goal:** add IOC, FOK and passive modify without breaking Week 1.
 
 **Hand in**
@@ -13,7 +15,7 @@
 | FOK, not enough liquidity | REJECT, no trade and no change to the book |
 | FOK across several levels | full execution at resting prices |
 | Modify, unknown id | REJECT |
-| Modify, invalid quantity or price | reject in the validation order given in `lob/book.py` |
+| Modify, invalid quantity or price | reject in validation order, preserve old order; router forwards the actual reason |
 | Modify, same price | moves to the back of the queue |
 | Modify, crossing price | passive: no matching |
 

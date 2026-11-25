@@ -22,5 +22,5 @@
 {"state":"X","best_bid":100,"bid_qty":10,"best_ask":95,"ask_qty":20,"bids":[[100,10,1]],"asks":[[95,20,1]]}
 {"event":"REJECT","order_id":999,"reason":"order not found"}
 {"state":"X","best_bid":100,"bid_qty":10,"best_ask":95,"ask_qty":20,"bids":[[100,10,1]],"asks":[[95,20,1]]}
-{"event":"REJECT","order_id":1,"reason":"order not found"}
+{"event":"REJECT","order_id":1,"reason":"invalid price"}
 {"state":"X","best_bid":100,"bid_qty":10,"best_ask":95,"ask_qty":20,"bids":[[100,10,1]],"asks":[[95,20,1]]}

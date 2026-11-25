@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Grader: runs your Book against golden traces produced by the reference engine.
+"""Grader: runs your Book against golden traces for the educational specification.
 
     python grade.py                 # all tiers
     python grade.py --tier 1        # only tier 1 traces
@@ -23,7 +23,7 @@ sys.path.insert(0, HERE)
 from lob.cli import load_factory, parse_stp, run_csv  # noqa: E402
 
 TIER_NAMES = {1: "Tier 1  core book", 2: "Tier 2  IOC / FOK / modify",
-              3: "Tier 3  self-trade prevention", 4: "Tier 4  bug-compatibility (optional)"}
+              3: "Optional  Cancel Newest"}
 
 
 def load_golden(path):
@@ -91,6 +91,9 @@ def main() -> int:
     for tier in sorted(by_tier):
         a, b = by_tier[tier]
         print("%-40s %d/%d%s" % (TIER_NAMES.get(tier, "Tier %d" % tier), a, b, "  done" if a == b else ""))
+    if not total:
+        print("No active traces matched")
+        return 2
     print("TOTAL %d/%d" % (passed, total))
     return 0 if passed == total else 1
 

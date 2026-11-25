@@ -1,0 +1,13 @@
+{"event":"ACK","order_id":1}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":5,"bids":[],"asks":[[100,5,1]]}
+{"event":"ACK","order_id":2}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":10,"bids":[],"asks":[[100,10,2]]}
+{"event":"ACK","order_id":3}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":20,"bids":[],"asks":[[100,20,3]]}
+{"event":"REJECT","order_id":4,"reason":"FOK not fillable"}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":20,"bids":[],"asks":[[100,20,3]]}
+{"event":"ACK","order_id":5}
+{"event":"TRADE","aggressor_id":5,"resting_id":1,"price":100,"qty":5,"ts":5}
+{"event":"FILLED","order_id":1}
+{"event":"FILLED","order_id":5}
+{"state":"X","best_bid":null,"bid_qty":0,"best_ask":100,"ask_qty":15,"bids":[],"asks":[[100,15,2]]}

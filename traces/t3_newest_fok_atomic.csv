@@ -1,0 +1,7 @@
+# FOK cannot skip own resting order; earlier eligible qty insufficient
+id,symbol,side,type,price,qty,trader_id
+1,X,SELL,LIMIT,100,5,2
+2,X,SELL,LIMIT,100,5,1
+3,X,SELL,LIMIT,100,10,3
+4,X,BUY,FOK,100,10,1
+5,X,BUY,FOK,100,5,1

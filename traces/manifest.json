@@ -56,38 +56,6 @@
     "description": "modify loses priority, passive reprice"
   },
   {
-    "name": "t3_fuzz_both_s7",
-    "csv": "t3_fuzz_both_s7.csv",
-    "golden": "t3_fuzz_both_s7.jsonl",
-    "stp": "CANCEL_BOTH",
-    "tier": 3,
-    "description": "STP both, random flow"
-  },
-  {
-    "name": "t3_fuzz_newest_s5",
-    "csv": "t3_fuzz_newest_s5.csv",
-    "golden": "t3_fuzz_newest_s5.jsonl",
-    "stp": "CANCEL_NEWEST",
-    "tier": 3,
-    "description": "STP newest, random flow"
-  },
-  {
-    "name": "t3_fuzz_oldest_s6",
-    "csv": "t3_fuzz_oldest_s6.csv",
-    "golden": "t3_fuzz_oldest_s6.jsonl",
-    "stp": "CANCEL_OLDEST",
-    "tier": 3,
-    "description": "STP oldest, random flow"
-  },
-  {
-    "name": "t3_stp_both",
-    "csv": "t3_stp.csv",
-    "golden": "t3_stp_both.jsonl",
-    "stp": "CANCEL_BOTH",
-    "tier": 3,
-    "description": "self-trade: cancel both"
-  },
-  {
     "name": "t3_stp_newest",
     "csv": "t3_stp.csv",
     "golden": "t3_stp_newest.jsonl",
@@ -96,19 +64,11 @@
     "description": "self-trade: cancel newest"
   },
   {
-    "name": "t3_stp_oldest",
-    "csv": "t3_stp.csv",
-    "golden": "t3_stp_oldest.jsonl",
-    "stp": "CANCEL_OLDEST",
+    "name": "t3_newest_fok_atomic",
+    "csv": "t3_newest_fok_atomic.csv",
+    "golden": "t3_newest_fok_atomic.jsonl",
+    "stp": "CANCEL_NEWEST",
     "tier": 3,
-    "description": "self-trade: cancel oldest"
-  },
-  {
-    "name": "t4_quirk_modify_invalid",
-    "csv": "t4_quirk_modify_invalid.csv",
-    "golden": "t4_quirk_modify_invalid.jsonl",
-    "stp": "NONE",
-    "tier": 4,
-    "description": "C++ swallows modify's own reject (see MENTOR_NOTES)"
+    "description": "FOK must stop at first self-order; no partial execution"
   }
 ]

@@ -6,7 +6,7 @@ calling sink.on_event(<event>) with the dataclasses from lob/events.py.
 
 The tiers below match the grader (python grade.py --tier N). Do them in order.
 Read docs/DESIGN.md first: the data-structure discussion there is the
-best hint you will get. The rules you must reproduce are in README.md (section "The rules").
+best hint you will get. The authoritative educational rules are in docs/SPECIFICATION.md.
 """
 from __future__ import annotations
 
@@ -70,12 +70,9 @@ class Book:
         On success emit ModifyAck(id, new_price, new_qty). No other events."""
         raise NotImplementedError("Tier 2: modify")
 
-    # ------------------------------------------------------------------ Tier 3
-    # Self-trade prevention lives inside your matching loop, driven by self.stp.
-    # It only fires when order.trader_id != 0 and equals the resting order's trader_id.
-    #   CANCEL_NEWEST: emit STPCancel(agg, resting, self.stp); stop; aggressor is
-    #                  cancelled -> CancelAck(agg). Trades already done stay done.
-    #   CANCEL_OLDEST: emit STPCancel; remove the RESTING order; keep matching.
-    #   CANCEL_BOTH:   emit STPCancel; remove the resting order; aggressor is
-    #                  cancelled -> CancelAck(agg).
-    # FOK's "can I fill?" pre-check must also skip same-trader resting orders.
+    # ------------------------------------------------------------------ Optional Cancel Newest
+    # When a nonzero incoming trader ID equals an eligible resting trader ID,
+    # emit STPCancel then CancelAck for the aggressor and stop. Earlier trades
+    # stay done; resting order untouched; no Partial on STP cancellation.
+    # FOK precheck must stop at the first eligible self-order, not skip it.
+    # Reject before ACK if insufficient liquidity before that point.

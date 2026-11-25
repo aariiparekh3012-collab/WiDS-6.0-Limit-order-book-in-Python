@@ -12,8 +12,7 @@ jobs:
         include:
           - {tier: 1, name: "Tier 1 core book (Week 1, mandatory)", optional: false}
           - {tier: 2, name: "Tier 2 IOC / FOK / modify (Week 2, mandatory)", optional: false}
-          - {tier: 3, name: "Tier 3 self-trade prevention (optional)", optional: true}
-          - {tier: 4, name: "Tier 4 compatibility (optional)", optional: true}
+          - {tier: 3, name: "Optional Cancel Newest", optional: true}
     name: ${{ matrix.name }}
     continue-on-error: ${{ matrix.optional }}
     steps:

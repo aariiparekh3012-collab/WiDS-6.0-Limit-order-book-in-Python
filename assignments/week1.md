@@ -1,5 +1,7 @@
 # Week 1: Core order book
 
+**Level 1 (Foundation), 25 marks.** Individual submission. Review your design with the mentor; choose your own structures.
+
 **Goal:** a working Book for limit and market orders, with cancel, `top()`, `depth()` and `order_count()`.
 
 **Hand in**

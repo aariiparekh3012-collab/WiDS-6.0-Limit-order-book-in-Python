@@ -1,7 +1,6 @@
 """Routes orders to one Book per symbol. PROVIDED, you do not need to edit this.
 
-It mirrors the reference Exchange on purpose, including how cancel/modify find the
-right book: they probe each book in turn and forward the first success.
+Educational router: probe each book; forward success or an existing order's validation rejection.
 """
 from __future__ import annotations
 
@@ -55,7 +54,9 @@ class Exchange:
                 continue
             probe = VectorSink()
             book.modify(order_id, new_price, new_qty, probe)
-            if any(isinstance(e, ModifyAck) for e in probe.events):
+            if any(isinstance(e, ModifyAck) or
+                   (isinstance(e, Reject) and e.reason != "order not found")
+                   for e in probe.events):
                 for e in probe.events:
                     sink.on_event(e)
                 return
