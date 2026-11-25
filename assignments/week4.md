@@ -2,7 +2,7 @@
 
 **Question:** can depth imbalance and order-flow imbalance (OFI) predict short-term mid-price changes in a simulated market? Keep contemporaneous price impact separate from out-of-sample predictability.
 
-Individual assignment. Your mentor supplies an agent-based simulator (noise traders, liquidity providers, informed traders) and notebook template in Week 4. Run control and signal configurations through your own engine. NumPy, pandas, Matplotlib and scikit-learn permitted; logistic regression compulsory, Random Forest optional. Handle empty or crossed snapshots explicitly, preserve original command indices when constructing the target.
+Individual assignment. The Week 4 kit in `research/` has an agent-based simulator (liquidity providers, noise traders, informed traders), a recorder and a notebook template in `notebooks/`. Run control and signal configurations through your own engine. NumPy, pandas, Matplotlib and scikit-learn permitted; logistic regression compulsory, Random Forest optional. Handle empty or crossed snapshots explicitly, preserve original command indices when constructing the target.
 
 **Hand in**
 - A reproducible generator setting: seed and configuration.
@@ -13,7 +13,16 @@ Individual assignment. Your mentor supplies an agent-based simulator (noise trad
 - Models: majority-class baseline, an imbalance-threshold rule, and logistic regression.
 - Metrics: accuracy, balanced accuracy, macro F1, confusion matrix, comparison with baselines, stability across seeds.
 - A comparison of the control market and the signal market.
-- A concise project report or detailed README summarising engine design, correctness, benchmarking, research method, results and limitations, with reproducibility instructions. An individual demonstration is optional.
+- A concise project report or detailed README summarising engine design, correctness, benchmarking, research method, results and limitations, with reproducibility instructions.
 
 **Rules:** never put future data into a feature. Never use the simulator's hidden fair value as a feature.
 A null result is fine. Predicting well on synthetic data does not show a real trading edge.
+
+**Kit commands**
+```bash
+pip install -r requirements-research.txt
+python -m research.make_tapes
+python -m research.check_replay          # must say PASSED before you trust your results
+python -m unittest research.test_features -v
+```
+`check_replay` is the only automated part. It tells you whether your engine is correct on new data. Everything else is read and discussed with your mentor.

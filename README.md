@@ -9,7 +9,7 @@ and use its order flow to look for a signal. See [curriculum](docs/CURRICULUM.md
 | 1 | Core book | limit and market orders, FIFO, cancel, top of book, depth | `python grade.py --tier 1` |
 | 2 | Order types | IOC, FOK, modify | `python grade.py --tier 2` |
 | 3 | Speed | choose Basic measurement or Intermediate profiling and one optimisation; optional Cancel Newest challenge | `python bench.py`, optional `python grade.py --tier 3` |
-| 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook and concise project summary | set by your mentor |
+| 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook and concise project summary | `python -m research.check_replay` (engine check only), your mentor reads the rest |
 
 Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. A 10-minute screening quiz assesses basic Python and reasoning; no finance or ML prerequisites. Python 3.10+ standard library for the engine; NumPy, pandas, Matplotlib and scikit-learn for Week 4.
 
@@ -22,6 +22,20 @@ python grade.py            # everything fails with "not implemented yet": that i
 ```
 
 Engine implementation belongs in **`lob/book.py`**; add your own tests, design notes, reports and research notebook.
+## Week 4 kit
+
+Opens in Week 4. You need `pip install -r requirements-research.txt` first.
+
+```bash
+python -m research.make_tapes          # control and signal tapes, seeds 1 to 3 (deterministic)
+python -m research.check_replay        # does YOUR engine reproduce the reference on those tapes?
+python -m research.record data/tapes/signal_s1.csv --out data/signal_s1_states.csv
+python -m unittest research.test_features -v    # self-checks for the features you write
+```
+
+The notebook in `notebooks/analysis_template.ipynb` walks through the project. The simulator never writes
+its hidden fair value to a tape, and your features must not try to recover it.
+
 Do not edit `lob/events.py`, `lob/types.py`, `lob/exchange.py`, `lob/cli.py`,
 `grade.py` or the files in `traces/`.
 
@@ -38,6 +52,8 @@ bench.py           throughput benchmark
 traces/            input CSVs and golden outputs (.jsonl) for the educational specification
 docs/              DESIGN.md: data-structure notes (read this first)
 tests/             small unit tests you can run while you work
+research/          Week 4 kit: simulator, recorder, features, engine check
+notebooks/         Week 4 analysis notebook template
 assignments/       what to hand in each week
 templates/         design notes, benchmark CSV and report formats
 ```
@@ -96,5 +112,5 @@ Basic: repeat measurements and explain results. Intermediate: also profile, anal
 - Ask in your batch channel or a doubt slot before you are stuck for more than 45 minutes.
 - Write your own code. Discuss ideas freely, do not copy another mentee's `book.py`.
 - Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest challenge; archived modes and compatibility fixtures are not graded.
-- Completion is assessed through weekly milestones, correctness, reproducible research and clear final documentation. A project demonstration is optional.
+- Completion is assessed through weekly milestones, correctness, reproducible research and clear final documentation.
 - Weekly tasks and what to hand in are in `assignments/`. Submission formats are in `templates/`.

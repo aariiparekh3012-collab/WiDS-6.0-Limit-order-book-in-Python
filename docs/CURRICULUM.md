@@ -19,4 +19,4 @@ The educational specification is independent of the C++ inspiration. Participant
 10-minute screening quiz covering basic Python, simple problem-solving, data structures and motivation. No finance or ML prerequisites.
 
 ## Deliverables
-Individual repository, source, design notes, tests, benchmark results and explanation, reproducible research notebook, and a concise project report or detailed README. A project demonstration is optional. No compulsory oral examination. See assignments/ and [completion criteria](RUBRIC.md).
+Individual repository, source, design notes, tests, benchmark results and explanation, reproducible research notebook, and a concise project report or detailed README. See assignments/ and [completion criteria](RUBRIC.md).

@@ -10,4 +10,3 @@
 
 Both benchmark tracks are equally valid. Cancel Newest is an optional extension. A well-explained negative or null result is acceptable. Assessment focuses on correctness, independent work, sound methodology and reproducibility rather than raw speed or predictive accuracy.
 
-A project demonstration is optional; no compulsory presentation or oral examination. 

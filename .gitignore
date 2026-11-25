@@ -4,3 +4,5 @@ __pycache__/
 mentor_only/
 MENTOR_NOTES.md
 .vscode/
+data/
+.ipynb_checkpoints/
