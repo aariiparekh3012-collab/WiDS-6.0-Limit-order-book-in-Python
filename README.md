@@ -17,20 +17,27 @@ Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. A 1
 
 [WiDS 6.0 project hub](https://tinyurl.com/WiDS-2026) contains the four weekly learning guides, curriculum and assignment resources.
 
-The standalone mentee learning app will be released separately when ready.
+Start with the [weekly resource index](docs/RESOURCES.md), [matching specification](docs/SPECIFICATION.md) and [completion criteria](docs/RUBRIC.md).
+
+## Start here
+
+1. Create your own repository from this starter (fork or use as a template if enabled), then clone **your own copy**. The commands below also work for a local practice checkout of the starter.
+2. Use Python 3.10 or later. Implement the Week 1 assignment first; do not expect the untouched starter to pass.
+3. Commit progress incrementally and submit your repository link to your mentor at each checkpoint.
 
 ## Setup
 
 ```bash
 git clone https://github.com/aariiparekh3012-collab/WiDS-6.0-Limit-order-book-in-Python.git
 cd WiDS-6.0-Limit-order-book-in-Python
-python grade.py            # everything fails with "not implemented yet": that is correct
+python grade.py --tier 1   # initially fails with "not implemented yet": expected
 ```
 
 Engine implementation belongs in **`lob/book.py`**; add your own tests, design notes, reports and research notebook.
+
 ## Week 4 kit
 
-Opens in Week 4. You need `pip install -r requirements-research.txt` first.
+Use this kit in Week 4, after the seven mandatory traces pass. Install dependencies with `python -m pip install -r requirements-research.txt` in your research environment.
 
 ```bash
 python -m research.make_tapes          # control and signal tapes, seeds 1 to 3 (deterministic)
@@ -117,6 +124,12 @@ Basic: repeat measurements and explain results. Intermediate: also profile, anal
 
 - Ask in your batch channel or a doubt slot before you are stuck for more than 45 minutes.
 - Write your own code. Discuss ideas freely, do not copy another mentee's `book.py`.
-- Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest challenge; archived modes and compatibility fixtures are not graded.
+- Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest challenge; historical modes and compatibility fixtures are excluded from the current course.
 - Completion is assessed through weekly milestones, correctness, reproducible research and clear final documentation.
 - Weekly tasks and what to hand in are in `assignments/`. Submission formats are in `templates/`.
+
+## GitHub Actions checkpoints
+
+The starter itself checks fixture integrity and expected TODO behavior. In your own repository, automatic grading defaults to Week 1 (Tier 1 only). In Settings → Secrets and variables → Actions → Variables, set repository variable `WIDS_MILESTONE` to `2` once ready for Week 2, or `3` to additionally run optional STP. You can also select a milestone using the manual Actions workflow. Tier 2 includes both mandatory tiers; optional Tier 3 failures do not fail the workflow. Local grader commands still select individual tiers, not cumulative tiers.
+
+See [active trace inventory](traces/README.md). The nine active fixtures are unchanged; retired C++-compatibility fixtures remain available in repository history.

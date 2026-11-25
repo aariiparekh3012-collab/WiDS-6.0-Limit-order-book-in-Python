@@ -25,4 +25,4 @@ python -m research.make_tapes
 python -m research.check_replay          # must say PASSED before you trust your results
 python -m unittest research.test_features -v
 ```
-`check_replay` is the only automated part. It tells you whether your engine is correct on new data. Everything else is read and discussed with your mentor.
+`check_replay` is the automated engine correctness gate on new data; the feature unit tests are implementation self-checks. Research quality, model evaluation and interpretation are reviewed with your mentor.

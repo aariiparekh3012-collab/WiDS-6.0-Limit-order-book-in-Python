@@ -6,3 +6,11 @@ MENTOR_NOTES.md
 .vscode/
 data/
 .ipynb_checkpoints/
+
+# Local private workspaces and credentials (never commit them)
+.env
+.env.*
+!.env.example
+*.prof
+*.pstats
+wids-mentor-private/

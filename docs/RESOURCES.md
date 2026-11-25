@@ -25,4 +25,4 @@ All four weekly guides contain concept explanations, worked examples, exercises,
 - [Learning guide](https://app.notion.com/p/4233d7dedf7481c19fdad5625b0c82b4) and [assignment](../assignments/week4.md)
 - [Cont, Kukanov & Stoikov: The Price Impact of Order Book Events](https://arxiv.org/abs/1011.6402)
 - [pandas](https://pandas.pydata.org/docs/getting_started/index.html), [logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html), [leakage pitfalls](https://scikit-learn.org/stable/common_pitfalls.html), [metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
-- Simulator and notebook template supplied during Week 4. Submit your reproducible notebook and [concise project summary or README](../templates/report.md).
+- Use the supplied [simulator](../research/simulator.py), [recorder](../research/record.py), [feature starter](../research/features.py) and [notebook template](../notebooks/analysis_template.ipynb) during Week 4. Submit your reproducible notebook and [concise project summary or README](../templates/report.md).
