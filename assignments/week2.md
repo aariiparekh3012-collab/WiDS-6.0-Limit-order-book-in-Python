@@ -1,6 +1,6 @@
 # Week 2: Advanced order types
 
-**Level 2 (Advanced), 20 marks.** Individual submission.
+**Level 2 (Advanced).** Individual submission.
 
 **Goal:** add IOC, FOK and passive modify without breaking Week 1.
 

@@ -1,16 +1,22 @@
-# Report title
+# Project summary
 
-Participant ID:  GitHub:  Benchmark track:
+Participant:  
+Repository:  
+Benchmark track:
 
-Target length: 3–5 pages. Individual submission.
+Use this template as a concise report or as sections in your README. No prescribed page count.
 
-## Abstract
-## Introduction
-## Engine architecture
-## Correctness (grader results, edge tests)
-## Performance (benchmark method, results and interpretation; profile and before/after if Intermediate)
-## Research method (Week 4)
-## Results
-## Limitations
+## Engine design and correctness
+Architecture, data structures, mandatory trace results and independent tests.
+
+## Benchmarking
+Workload, environment, repeated measurements, interpretation; profiling and before/after comparison if Intermediate.
+
+## Quantitative research
+Dataset configuration, features, target, baselines, logistic regression, chronological split, results and limitations. Link to the reproducible notebook.
+
+## Reproduction
+Exact commands, dependencies, seeds and versions.
+
 ## Conclusion
-## Reproducibility (exact commands, seeds, versions)
+Key findings and lessons learned.

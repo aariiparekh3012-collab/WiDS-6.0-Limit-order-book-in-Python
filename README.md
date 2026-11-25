@@ -2,16 +2,16 @@
 
 You will write the matching engine of a small exchange in Python, check it
 against golden traces under the independent educational specification, then benchmark it
-and use its order flow to look for a signal. See [curriculum](docs/CURRICULUM.md), [specification](docs/SPECIFICATION.md) and [rubric](docs/RUBRIC.md).
+and use its order flow to look for a signal. See [curriculum](docs/CURRICULUM.md), [specification](docs/SPECIFICATION.md) and [completion criteria](docs/RUBRIC.md).
 
 | Week | Theme | You do | Grader |
 |---|---|---|---|
 | 1 | Core book | limit and market orders, FIFO, cancel, top of book, depth | `python grade.py --tier 1` |
 | 2 | Order types | IOC, FOK, modify | `python grade.py --tier 2` |
 | 3 | Speed | choose Basic measurement or Intermediate profiling and one optimisation; optional Cancel Newest challenge | `python bench.py`, optional `python grade.py --tier 3` |
-| 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook, report and demo | set by your mentor |
+| 4 | Research | study whether order-book imbalance predicts short-term price moves; notebook and concise project summary | set by your mentor |
 
-Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. Basic Python required; no finance or ML prerequisites. Python 3.10+ standard library for the engine; NumPy, pandas, Matplotlib and scikit-learn for Week 4.
+Four weeks, 6–8 hours/week, 4–6 mentees, individual projects throughout. A 10-minute screening quiz assesses basic Python and reasoning; no finance or ML prerequisites. Python 3.10+ standard library for the engine; NumPy, pandas, Matplotlib and scikit-learn for Week 4.
 
 ## Setup
 
@@ -95,6 +95,6 @@ Basic: repeat measurements and explain results. Intermediate: also profile, anal
 
 - Ask in your batch channel or a doubt slot before you are stuck for more than 45 minutes.
 - Write your own code. Discuss ideas freely, do not copy another mentee's `book.py`.
-- Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest bonus; archived modes and compatibility fixtures are not graded.
-- Competitive leaderboard uses the 100-mark rubric, not raw speed or model accuracy.
+- Two formal levels: Foundation (3 traces), Advanced (7 cumulative). Tier 3 is a separate optional Cancel Newest challenge; archived modes and compatibility fixtures are not graded.
+- Completion is assessed through weekly milestones, correctness, reproducible research and clear final documentation. A project demonstration is optional.
 - Weekly tasks and what to hand in are in `assignments/`. Submission formats are in `templates/`.
